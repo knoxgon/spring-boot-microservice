@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.knoxgon.rest.webservices.restfulwebservices.exceptions.UserNotFoundException;
+
 //Rest controller - Resource
 @RestController
 public class UserResource {
@@ -31,6 +33,8 @@ public class UserResource {
 	//Retrieve one user, id as input
 	@GetMapping("/users/{id}")
 	public User getUser(@PathVariable String id) {
+		if(id == null || userService.getOneUser(id) == null)
+			throw new UserNotFoundException("id" + id);
 		return userService.getOneUser(id);
 	}
 	
