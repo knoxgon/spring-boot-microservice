@@ -2,13 +2,13 @@ package com.knoxgon.rest.webservices.restfulwebservices.userpcg;
 
 import java.util.Date;
 
-public class User {
+public class UserBean {
 	private String id;
 	private String name;
 	private Date birthdate;
 	
 	
-	public User(String id, String name, Date birthdate) {
+	public UserBean(String id, String name, Date birthdate) {
 		super();
 		this.id = id;
 		this.name = name;
