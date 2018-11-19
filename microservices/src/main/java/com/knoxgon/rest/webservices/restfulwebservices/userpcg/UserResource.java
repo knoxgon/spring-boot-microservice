@@ -30,7 +30,7 @@ public class UserResource {
 	//GET /users/{id}
 	//Retrieve one user, id as input
 	@GetMapping("/users/{id}")
-	public ResponseEntity<Object> getUser(@PathVariable String id) {
+	public User getUser(@PathVariable String id) {
 		return userService.getOneUser(id);
 	}
 	
